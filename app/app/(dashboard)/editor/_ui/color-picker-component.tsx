@@ -1,8 +1,14 @@
-import React from 'react'
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
+import React from "react";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 
-export const ColorPicker = ({ color, onChange }) => {
+export const ColorPicker = ({
+  color,
+  onChange,
+}: {
+  color: string;
+  onChange: (color: string) => void;
+}) => {
   return (
     <div className="flex items-center space-x-2">
       <Label htmlFor="colorPicker" className="sr-only">
@@ -23,5 +29,5 @@ export const ColorPicker = ({ color, onChange }) => {
         placeholder="#000000"
       />
     </div>
-  )
-}
+  );
+};

@@ -10,7 +10,7 @@ export const insertWaitlistEmail = async (email: string): Promise<any> => {
   if (emailExists) {
     return { error: "Email already exists" };
   }
-  const { data, error } = await supabase.from("waitlist").insert([{ email }]);
+  const { data, error } = await supabase.from("waitlist").insert([{ email, interest_type: 'general' }]);
 
   if (error) {
     console.error("Error inserting email to waitlist:", error);

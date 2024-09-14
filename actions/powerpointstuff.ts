@@ -12,7 +12,7 @@ export async function saveContent(
   try {
     // Check if content already exists for the user
     const { data: existingData, error: selectError } = await supabase
-      .from("PowerPoint")
+      .from("Content")
       .select("id")
       .eq("user_id", userId)
       .eq("type", type)
@@ -27,7 +27,7 @@ export async function saveContent(
     if (existingData) {
       // Content exists, update it
       const { data: updateData, error: updateError } = await supabase
-        .from("PowerPoint")
+        .from("Content")
         .update({ content: [content] })
         .eq("user_id", userId)
         .eq("type", type)
@@ -40,7 +40,7 @@ export async function saveContent(
     } else {
       // Content does not exist, insert it
       const { data: insertData, error: insertError } = await supabase
-        .from("PowerPoint")
+        .from("Content")
         .insert({
           id: uuid(),
           content: [content],
@@ -64,7 +64,7 @@ export async function saveContent(
 
 export async function fetchDefaultValue(userId: string, type: string) {
   const { data, error } = await supabase
-    .from("PowerPoint")
+    .from("Content")
     .select("*")
     .eq("user_id", userId || "011305aa-0ee6-49ed-91f2-d572fc1bb47d")
     .eq("type", type)

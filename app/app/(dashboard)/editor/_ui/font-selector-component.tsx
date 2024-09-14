@@ -1,5 +1,11 @@
-import React from 'react'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import React from "react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const fontOptions = [
   "Arial",
@@ -14,10 +20,16 @@ const fontOptions = [
   "Comic Sans MS",
   "Trebuchet MS",
   "Arial Black",
-  "Impact"
-]
+  "Impact",
+];
 
-export const FontSelector = ({ value, onChange }) => {
+export const FontSelector = ({
+  value,
+  onChange,
+}: {
+  value: string;
+  onChange: (value: string) => void;
+}) => {
   return (
     <Select onValueChange={onChange} value={value}>
       <SelectTrigger className="w-[180px]">
@@ -31,5 +43,5 @@ export const FontSelector = ({ value, onChange }) => {
         ))}
       </SelectContent>
     </Select>
-  )
-}
+  );
+};
