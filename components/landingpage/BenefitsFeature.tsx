@@ -5,8 +5,8 @@ import Image from "next/image";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import clsx from "clsx";
 
-import Container from "@/components/landingpage/Container";
 import { landingpageContent } from "@/constants/landingpage";
+import Container from "./Container";
 
 export function BenefitsFeature({ isMarketplace = false }) {
   const content = landingpageContent;

@@ -1,8 +1,5 @@
 import Link from "next/link";
-import {
-  ContainerInner,
-  ContainerOuter,
-} from "@/components/landingpage/Container";
+import { ContainerInner, ContainerOuter } from "./Container";
 import { landingpageContent } from "@/constants/landingpage";
 
 function NavLink({
